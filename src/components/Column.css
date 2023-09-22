@@ -1,0 +1,20 @@
+.column
+{
+    min-width: 1px;
+    height: 40vh;
+    width: 100%;
+    padding: 1px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-self: flex-end;
+}
+
+.bar
+{
+    border-radius: 1px;
+}
+
+.my-label
+{
+    height: 10px;
+}

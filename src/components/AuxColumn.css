@@ -1,0 +1,20 @@
+.aux-column
+{
+    min-width: 1px;
+    height: 300px;
+    width: 100%;
+    padding: 2px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-self: flex-end;
+}
+
+.aux-bar
+{
+    border-radius: 3px;
+}
+
+.my-label
+{
+    height: 5px;
+}
