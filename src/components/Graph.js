@@ -15,7 +15,7 @@ function Graph(props)
     return(
         <div className='graph'>
             {barList.map((x) => (
-                <Column number = {x.value} index = {x.index} maximum = {props.maximum} color = {x.color} totalNumber = {props.array.length} hideIndexes = {props.hideIndexes}/>
+                <Column number = {x.value} index = {x.index} maximum = {props.maximum} color = {x.color} totalNumber = {props.array.length} hideIndexes = {props.hideIndexes} hideNumbers = {props.hideNumbers}/>
             ))}
         </div>
     );

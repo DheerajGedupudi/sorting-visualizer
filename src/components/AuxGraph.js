@@ -21,7 +21,7 @@ function AuxGraph(props) {
     return (
         <div className='aux-graph'>
             {barList.map((x) => (
-                <AuxColumn number={x.value} index={x.index} maximum={props.maximum} color={x.color} totalNumber={props.array.length} hideIndexes={props.hideIndexes} />
+                <AuxColumn number={x.value} index={x.index} maximum={props.maximum} color={x.color} totalNumber={props.array.length} hideIndexes={props.hideIndexes} hideNumbers={props.hideNumbers}/>
             ))}
         </div>
     );

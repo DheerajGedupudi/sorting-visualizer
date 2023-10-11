@@ -185,6 +185,7 @@ function App() {
 		setIters([]);
 		setIndex(0);
 		setAlgorithm(algorithm);
+		
 	}
 
 	function autoPlayNextStep() {
@@ -199,9 +200,13 @@ function App() {
 		}
 	}
 
-	function handleCheckBox(e)
+	function handleCheckBoxIndexes(e)
 	{
 		setHideIndexes(!e.target.checked);
+	}
+
+	function handleCheckBoxNumbers(e) {
+		setHideNumbers(!e.target.checked);
 	}
 
 	useEffect(() => {
@@ -248,12 +253,14 @@ function App() {
 				</select>
 				<button onClick={randomizeButtonHandler}>Randomize</button>
 				<label> Show Indexes: </label>
-				<input type='checkbox' onChange={handleCheckBox} className='checkBox'></input>
+				<input type='checkbox' onChange={handleCheckBoxIndexes} className='checkBox'></input>
+				<label> Show Numbers: </label>
+				<input type='checkbox' onChange={handleCheckBoxNumbers} className='checkBox'></input>
 			</div>
 			<h2 className='algoName'>{algorithm}</h2>
-			<Graph array={arr} maximum={size} hideIndexes={hideIndexes}/>
+			<Graph array={arr} maximum={size} hideIndexes={hideIndexes} hideNumbers={hideNumbers}/>
 			{algorithm === "Merge Sort" ?
-					<MergeComponent barL={barL} barR={barR} max={size} hideIndexes={hideIndexes}/> 
+					<MergeComponent barL={barL} barR={barR} maximum={size} hideIndexes={hideIndexes} hideNumbers={hideNumbers}/> 
 				: <></>
 			}
 			<div>
