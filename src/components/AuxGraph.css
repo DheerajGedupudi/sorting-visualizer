@@ -1,14 +1,12 @@
 .aux-graph {
     /* margin: 0% 5% 0% 5%; */
-    height: 30vh;
-    width: 600px;
-    /* padding-left: 10px;
-    padding-right: 10px; */
+    height: 18vh;
+    width: 40vw;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     background-color: cyan;
-    border-radius: 2px;
+    border-radius: 5px;
     box-sizing: border-box;
 }
 

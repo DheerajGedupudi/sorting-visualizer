@@ -12,14 +12,11 @@ function Graph(props) {
         barList.push(bar);
     }
 
-    // Calculate extra height based on whether labels are shown
-    const extraHeight = (!props.hideIndexes || !props.hideNumbers) ? 20 : 0;
-
     return (
         <div
             className="graph"
             style={{
-                height: `calc(35% + ${extraHeight}px)` // Add extra height dynamically
+                height: `${props.graphHeight}vh` // Add extra height dynamically
             }}
         >
             {barList.map((x) => (

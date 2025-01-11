@@ -1,14 +1,7 @@
 import './AuxColumn.css';
 
 function AuxColumn(props) {
-    let reference = 100;
-    if (!props.hideNumbers) {
-        reference -= 20;
-    }
-    if (!props.hideIndexes) {
-        reference -= 20;
-    }
-    let fraction = props.number / props.maximum * reference;
+    let fraction = props.number / props.maximum * 100;
     let heightOfBar = fraction.toString() + "%";
     let notCramped = props.totalNumber < 25;
     // let height = window.innerHeight;
@@ -21,7 +14,7 @@ function AuxColumn(props) {
                 <p className='my-label-aux'>{props.index}</p> : <></>
             }
             <span className='aux-bar' style={{ height: `${heightOfBar}`, backgroundColor: `${props.color}` }}></span>
-            {notCramped ?
+            {notCramped && !props.hideNumbers ?
                 <p className='my-label-aux'>{props.number}</p> : <></>
             }
         </div>

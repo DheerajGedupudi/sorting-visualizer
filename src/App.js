@@ -244,9 +244,13 @@ function App() {
 				</select>
 				<button onClick={randomizeButtonHandler}>Shuffle</button>
 			</div>
+
+			<label>Hide Numbers: </label>
+			<input type='checkbox' onChange={handleCheckBoxNumbers} className='checkBox'></input>
+
 			<h2 className='algoName'>{algorithm}</h2>
 			<p>Array</p>
-			<Graph array={arr} maximum={size} hideIndexes={hideIndexes} hideNumbers={hideNumbers} />
+			<Graph array={arr} maximum={size} hideIndexes={hideIndexes} hideNumbers={hideNumbers} graphHeight={algorithm === "Merge Sort" ? "25" : "50"} />
 			{algorithm === "Merge Sort" ?
 				<MergeComponent barL={barL} barR={barR} maximum={size} hideIndexes={hideIndexes} hideNumbers={hideNumbers} />
 				: <></>

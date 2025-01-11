@@ -1,6 +1,6 @@
 .column {
     min-width: 1px;
-    height: 40vh;
+    /* height: 40vh; */
     width: 100%;
     padding: 1px;
     display: flex;

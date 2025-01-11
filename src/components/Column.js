@@ -16,18 +16,10 @@ function Column(props) {
                 }}
             >
                 {/* Overlay index or number label */}
-                {notCramped && (
-                    <>
-                        {!props.hideIndexes && <p className="my-label">{props.index}</p>}
-                        <p
-                            className="my-label"
-                            style={{ color: props.color === "black" ? "white" : "black" }}
-                        >
-                            {props.number}
-                        </p>
-
-                    </>
+                {notCramped && !props.hideNumbers && (
+                    <span className="my-label">{props.number}</span>
                 )}
+
             </span>
         </div >
     );
