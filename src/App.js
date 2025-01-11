@@ -56,6 +56,8 @@ function App() {
 
 	const [transitionTime, setTransitionTime] = useState(500);
 
+	const [isChecked, setIsChecked] = useState(true);
+
 	const algoMap = {
 		"Bubble Sort": bubbleSort,
 		"Selection Sort": selectionSort,
@@ -135,7 +137,9 @@ function App() {
 	function resetButtonHandler() {
 		setIsPlaying(false);
 		setIndex(0);
-		setArr(iters[0]);
+		if (index != 0) {
+			setArr(iters[0]);
+		}
 	}
 
 	function previousButtonHandler() {
@@ -154,7 +158,7 @@ function App() {
 	function nextButtonHandler() {
 		setIsPlaying(false);
 		let size = iters.length;
-		if (index === size - 1) {
+		if (index >= size - 1) {
 			return;
 		}
 		setIndex((index + 1));
@@ -198,6 +202,7 @@ function App() {
 	}
 
 	function handleCheckBoxNumbers(e) {
+		setIsChecked(!isChecked);
 		setHideNumbers(!e.target.checked);
 	}
 
@@ -246,8 +251,7 @@ function App() {
 			</div>
 
 			<label>Show Number Labels: </label>
-			<input type='checkbox' onChange={handleCheckBoxNumbers} className='checkBox' disabled={size > 50 ? true : false}></input>
-
+			<input type='checkbox' onChange={handleCheckBoxNumbers} className='checkBox' disabled={size > 50 ? true : false} checked={size > 50 ? false : isChecked}></input><br />
 			<h2 className='algoName'>{algorithm}</h2>
 			<p>Array</p>
 			<Graph array={arr} maximum={size} hideIndexes={hideIndexes} hideNumbers={hideNumbers} graphHeight={algorithm === "Merge Sort" ? "25" : "50"} />
@@ -263,10 +267,11 @@ function App() {
 				<label>Transistion Speed: </label>
 				<select defaultValue={"0.1 Second"} onChange={(event) => setTransitionTime(event.target.value)}>
 					<option value={500}>Default Speed</option>
-					<option value={50}>Faster</option>
-					<option value={200}>Fast</option>
-					<option value={500}>Normal</option>
-					<option value={1000}>Slow</option>
+					<option value={20}>Faster</option>
+					<option value={100}>Fast</option>
+					<option value={300}>Normal</option>
+					<option value={500}>Slow</option>
+					<option value={1000}>Slower</option>
 				</select>
 			</div>
 			<div>
@@ -274,6 +279,7 @@ function App() {
 				<button onClick={playButtonHandler}>Play</button>
 				<button onClick={stopButtonHandler}>Stop</button>
 			</div>
+			<br />
 		</div>
 	);
 }

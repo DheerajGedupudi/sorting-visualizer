@@ -30,4 +30,5 @@
     text-align: center;
     /* Center-align text inside the column */
     pointer-events: none;
+    padding-bottom: 5px;
 }
