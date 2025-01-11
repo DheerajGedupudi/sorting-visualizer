@@ -1,6 +1,6 @@
-.aux-graph{
+.aux-graph {
     /* margin: 0% 5% 0% 5%; */
-    height: 300px;
+    height: 30vh;
     width: 600px;
     /* padding-left: 10px;
     padding-right: 10px; */
@@ -11,7 +11,8 @@
     border-radius: 2px;
     box-sizing: border-box;
 }
-.inplace-graph{
+
+.inplace-graph {
     display: flex;
     flex-direction: row;
     justify-content: space-around;

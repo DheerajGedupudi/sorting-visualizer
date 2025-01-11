@@ -1,20 +1,39 @@
-.aux-column
-{
+.aux-column {
     min-width: 1px;
-    height: 300px;
+    height: 29vh;
     width: 100%;
-    padding: 2px;
+    padding: 1px;
     display: flex;
-    flex-direction: column-reverse;
-    align-self: flex-end;
+    flex-direction: column;
+    /* Normal column flow */
+    align-items: center;
+    /* Center bar and labels horizontally */
+    justify-content: flex-end;
+    /* Align the bar at the bottom */
+    position: relative;
+    /* Required for label positioning */
 }
 
-.aux-bar
-{
-    border-radius: 3px;
+.aux-bar {
+    border-radius: 5px;
+    width: 100%;
+    /* Full width for consistency */
+    position: relative;
+    /* Base layer for labels to overlay */
+    z-index: 1;
+    /* Ensure the bar is beneath the labels */
+    display: inline;
 }
 
-.my-label
-{
-    height: 5px;
+.my-label-aux {
+    position: absolute;
+    /* Place labels directly over the bar */
+    color: black;
+    /* Default text color */
+    z-index: 2;
+    /* Higher z-index to appear on top of the bar */
+    pointer-events: none;
+    /* Prevent labels from blocking interactions */
+    text-align: center;
+    /* Center-align text */
 }

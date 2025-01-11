@@ -16,8 +16,7 @@ function App() {
 
 	let defaultNumArr = [];
 
-	for (let i=1; i<=defaultSize; i++)
-	{
+	for (let i = 1; i <= defaultSize; i++) {
 		defaultNumArr.push(i);
 	}
 
@@ -26,7 +25,7 @@ function App() {
 	function createArrayOf(n) {
 		let myArr = [];
 		for (let i = 0; i < n; i++) {
-			myArr.push(new Bar(i+1, 'burlywood'));
+			myArr.push(new Bar(i + 1, 'burlywood'));
 		}
 		return myArr;
 	}
@@ -43,6 +42,8 @@ function App() {
 
 	const [index, setIndex] = useState(0);
 
+	const [sizeInput, setSizeInput] = useState(defaultSize); // Temporary input state
+
 	const [size, setSize] = useState("20");
 
 	const [isPlaying, setIsPlaying] = useState(false);
@@ -51,7 +52,7 @@ function App() {
 
 	const [hideIndexes, setHideIndexes] = useState(true);
 
-	const [hideNumbers, setHideNumbers] = useState(true);
+	const [hideNumbers, setHideNumbers] = useState(false);
 
 	const [transitionTime, setTransitionTime] = useState(500);
 
@@ -73,36 +74,34 @@ function App() {
 
 	function handleSizeChange(event) {
 		const result = event.target.value.replace(/\D/g, '');
-		let newSize = result;
-		event.target.value = result;
-		setSize(newSize);
-		console.log(result);
+		setSizeInput(result);
 	}
 
 	function createButtonHandler() {
-		if (size > 0 && size <= 400) {
-			setArr(createArrayOf(size));
+		const newSize = parseInt(sizeInput, 10);
+		if (newSize > 0 && newSize <= 400) {
+			setSize(newSize);
+			setArr(createArrayOf(newSize));
 			setIndex(0);
 			setIters([]);
+			setBarL([]);
+			setBarR([]);
 			setIsPlaying(false);
 		}
-		else
-		{
+		else {
 			alert("Please give a number which is less than or equal to 100");
 		}
 	}
 
 	function randomizeArray() {
-		for (let i = arr.length - 1; i > 0; i--) 
-		{
+		for (let i = arr.length - 1; i > 0; i--) {
 			let j = Math.floor(Math.random() * (i + 1));
 			let temp = arr[i];
 			arr[i] = arr[j];
 			arr[j] = temp;
 		}
 
-		for (let i=0; i<arr.length; i++)
-		{
+		for (let i = 0; i < arr.length; i++) {
 			arr[i] = new Bar(arr[i].value, 'burlywood');
 		}
 	}
@@ -110,8 +109,7 @@ function App() {
 	function randomizeButtonHandler() {
 		// console.log(arr);
 		const sortingFunction = algoMap[algorithm];
-		if (sortingFunction==null)
-		{
+		if (sortingFunction == null) {
 			alert("Please Select an Algorithm");
 			return;
 		}
@@ -121,8 +119,7 @@ function App() {
 		// console.log(ans);
 		// console.log("finished");
 		const sortedIters = ans[0];
-		if (algorithm === "Merge Sort")
-		{
+		if (algorithm === "Merge Sort") {
 			const sortedLIters = ans[1];
 			const sortedRIters = ans[2];
 			setBarLIters(sortedLIters);
@@ -143,8 +140,7 @@ function App() {
 
 	function previousButtonHandler() {
 		setIsPlaying(false);
-		if (index===0)
-		{
+		if (index === 0) {
 			return;
 		}
 		setIndex(index - 1);
@@ -158,20 +154,18 @@ function App() {
 	function nextButtonHandler() {
 		setIsPlaying(false);
 		let size = iters.length;
-		if (index === size-1) {
+		if (index === size - 1) {
 			return;
 		}
 		setIndex((index + 1));
-		setArr(iters[index+1]);
-		if (algorithm === "Merge Sort")
-		{
+		setArr(iters[index + 1]);
+		if (algorithm === "Merge Sort") {
 			setBarL(barLIters[index + 1]);
 			setBarR(barRIters[index + 1]);
 		}
 	}
 
-	function playButtonHandler()
-	{
+	function playButtonHandler() {
 		setIsPlaying(true);
 	}
 
@@ -179,13 +173,12 @@ function App() {
 		setIsPlaying(false);
 	}
 
-	function algoChangeHandler(algorithm)
-	{
+	function algoChangeHandler(algorithm) {
 		// console.log(algorithm);
 		setIters([]);
 		setIndex(0);
 		setAlgorithm(algorithm);
-		
+
 	}
 
 	function autoPlayNextStep() {
@@ -200,8 +193,7 @@ function App() {
 		}
 	}
 
-	function handleCheckBoxIndexes(e)
-	{
+	function handleCheckBoxIndexes(e) {
 		setHideIndexes(!e.target.checked);
 	}
 
@@ -226,10 +218,8 @@ function App() {
 	}, [isPlaying, index]);
 
 	let max = 0;
-	for (let i=0; i<arr.length; i++)
-	{
-		if (arr[i].value>max)
-		{
+	for (let i = 0; i < arr.length; i++) {
+		if (arr[i].value > max) {
 			max = arr[i].value;
 		}
 	}
@@ -252,15 +242,12 @@ function App() {
 					<option value={"Quick Sort"}>Quick Sort</option>
 				</select>
 				<button onClick={randomizeButtonHandler}>Randomize</button>
-				<label> Show Indexes: </label>
-				<input type='checkbox' onChange={handleCheckBoxIndexes} className='checkBox'></input>
-				<label> Show Numbers: </label>
-				<input type='checkbox' onChange={handleCheckBoxNumbers} className='checkBox'></input>
 			</div>
 			<h2 className='algoName'>{algorithm}</h2>
-			<Graph array={arr} maximum={size} hideIndexes={hideIndexes} hideNumbers={hideNumbers}/>
+			<p>Array</p>
+			<Graph array={arr} maximum={size} hideIndexes={hideIndexes} hideNumbers={hideNumbers} />
 			{algorithm === "Merge Sort" ?
-					<MergeComponent barL={barL} barR={barR} maximum={size} hideIndexes={hideIndexes} hideNumbers={hideNumbers}/> 
+				<MergeComponent barL={barL} barR={barR} maximum={size} hideIndexes={hideIndexes} hideNumbers={hideNumbers} />
 				: <></>
 			}
 			<div>

@@ -87,9 +87,8 @@ function partition(arr, low, high, iters) {
             i++;
             [arr[i], arr[j]] = [arr[j], arr[i]]; // Swap elements
         }
-        else{
-            if (i >= 0)
-            {
+        else {
+            if (i >= 0) {
                 arr[high] = new Bar(arr[high].value, comparingBarColor);
                 arr[j] = new Bar(arr[j].value, comparingBarColor);
                 iters.push([...arr]);
@@ -101,7 +100,7 @@ function partition(arr, low, high, iters) {
     }
 
     [arr[i + 1], arr[high]] = [arr[high], arr[i + 1]]; // Swap pivot to its correct position
-    arr[i+1] = new Bar(arr[i+1].value, swapingBarColor);
+    arr[i + 1] = new Bar(arr[i + 1].value, swapingBarColor);
     arr[high] = new Bar(arr[high].value, swapingBarColor);
     iters.push([...arr]);
 

@@ -1,20 +1,33 @@
-.column
-{
+.column {
     min-width: 1px;
     height: 40vh;
     width: 100%;
     padding: 1px;
     display: flex;
+    flex-direction: column;
+    /* Default column layout (not reversed) */
+    align-items: center;
+    /* Center bar and labels horizontally */
+    justify-content: flex-end;
+    /* Align bar to the bottom of the column */
+    position: relative;
+    /* Required for proper positioning */
+}
+
+.bar {
+    border-radius: 5px;
+    width: 100%;
+    /* Full width for consistency */
+    background-color: burlywood;
+    /* Default color for the bar */
+    z-index: 1;
+    /* Ensure bar stays under labels */
+    display: flex;
     flex-direction: column-reverse;
-    align-self: flex-end;
 }
 
-.bar
-{
-    border-radius: 1px;
-}
-
-.my-label
-{
-    height: 10px;
+.my-label {
+    text-align: center;
+    /* Center-align text inside the column */
+    pointer-events: none;
 }

@@ -12,7 +12,7 @@ function MergeComponent(props) {
             </div>
             <div>
                 <p>Right Auxiliary Array</p>
-                <AuxGraph array={props.barR} maximum={maximum} hideIndexes={props.hideIndexes} hideNumbers={props.hideNumbers} isAux={true}/>
+                <AuxGraph array={props.barR} maximum={maximum} hideIndexes={props.hideIndexes} hideNumbers={props.hideNumbers} isAux={true} />
             </div>
         </div>
     );

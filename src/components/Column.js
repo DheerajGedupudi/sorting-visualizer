@@ -1,22 +1,35 @@
 import './Column.css';
 
-function Column(props)
-{
-    let fraction = props.number/props.maximum*100;
-    let heightOfBar = fraction.toString()+"%";
-    let notCramped = props.totalNumber<75;
-    // let height = window.innerHeight;
-    // let width = window.innerWidth;
-    // console.log(height+" "+width);
+function Column(props) {
+    let fraction = (props.number / props.maximum) * 100;
+    let heightOfBar = `${fraction}%`;
+    let notCramped = props.totalNumber <= 50;
 
-    return(
-        <div className='column'>
-            {notCramped && !props.hideIndexes? 
-            <p className='my-label'>{props.index}</p>:<></>}
-            <span className='bar' style={{ height: `${heightOfBar}`, backgroundColor: `${props.color}` }}></span>
-            {notCramped && !props.hideNumbers?
-                <p className='my-label'>{props.number}</p> : <></>}
-        </div>
+    return (
+        <div className="column">
+            {/* Render the bar with the label overlay */}
+            <span
+                className="bar"
+                style={{
+                    height: heightOfBar,
+                    backgroundColor: props.color,
+                }}
+            >
+                {/* Overlay index or number label */}
+                {notCramped && (
+                    <>
+                        {!props.hideIndexes && <p className="my-label">{props.index}</p>}
+                        <p
+                            className="my-label"
+                            style={{ color: props.color === "black" ? "white" : "black" }}
+                        >
+                            {props.number}
+                        </p>
+
+                    </>
+                )}
+            </span>
+        </div >
     );
 }
 

@@ -2,19 +2,18 @@
 	text-align: center;
 }
 
-button
-{
+button {
 	border-radius: 5px;
-	background-color:aquamarine;
+	background-color: aquamarine;
 	margin: 5px;
 }
 
-.algoName
-{
+.algoName {
 	margin: 2px;
+	margin-bottom: -10px;
 }
 
-.checkBox{
+.checkBox {
 	border-style: solid;
 	border-color: black;
 	border-width: 6px;
