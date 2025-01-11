@@ -1,70 +1,126 @@
-# Getting Started with Create React App
+# Sorting Visualizer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A dynamic and interactive web application that visualizes various sorting algorithms, with a special emphasis on simulating **Merge Sort** like never before.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Motivation
 
-### `npm start`
+I was inspired to build a **Merge Sort simulation** that showcases its **non-in-place nature** using auxiliary arrays, something missing from existing visualizers. This project not only offers a unique, detailed view of Merge Sort but also covers other foundational algorithms for a comprehensive learning experience.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+### **Comprehensive Sorting Algorithms**
+- **Merge Sort**: Visualize the auxiliary arrays and merging process step-by-step.
+- **Bubble Sort**: Observe elements "bubble" into their correct positions.
+- **Selection Sort**: Watch how the smallest element is selected and placed.
+- **Insertion Sort**: See how elements are inserted into their correct positions.
+- **Quick Sort**: Understand partitioning and recursive sorting.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### **Interactive Features**
+Gain **complete control** over the sorting process with the following interactive features:
+- **Array Customization**:
+  - Adjust the array size and generate arrays with the click of a button.
+  - Randomize array values to test algorithms with different inputs.
+- **Visualization Controls**:
+  - **Play**: Automatically visualize the sorting process step by step.
+  - **Pause**: Stop the animation at any point.
+  - **Next**: Step through each sorting iteration manually.
+  - **Previous**: Go back to previous iterations to review the process.
+  - **Reset**: Return the array to its original unsorted state.
+- **Display Options**:
+  - Toggle the display of indexes and numbers on the bars for a cleaner or more detailed view.
+- **Animation Speed**:
+  - Adjust the **transition time** between iterations using a dropdown menu for fast-paced or detailed observation.
+- **Merge Sort-Specific Views**:
+  - Display **left** and **right auxiliary arrays** during merge operations for an in-depth understanding of the algorithm.
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Technologies Used
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **React**: For building a dynamic and responsive user interface.
+- **CSS**: For animations and styling.
+- **JavaScript**: For implementing sorting algorithms and managing state.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## Getting Started
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Prerequisites
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- [Node.js](https://nodejs.org) installed on your machine.
+- A package manager like `npm` or `yarn`.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Installation
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/DheerajGedupudi/sorting-visualizer.git
+   cd sorting-visualizer
+   ```
 
-## Learn More
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Running the Project
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Start the development server:
 
-### Code Splitting
+```bash
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Visit [http://localhost:3000](http://localhost:3000) to view the app in your browser.
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## How to Use
 
-### Making a Progressive Web App
+1. **Select an Algorithm**:
+   - Choose a sorting algorithm (e.g., Merge Sort) from the dropdown menu.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+2. **Customize the Array**:
+   - Adjust the array size using the input box and click "Create Array."
+   - Use the "Randomize" button to shuffle array values.
 
-### Advanced Configuration
+3. **Control the Sorting Process**:
+   - **Play**: Automatically visualize the sorting process.
+   - **Pause**: Stop the animation at any time.
+   - **Next**: Step through each iteration of the sorting process manually.
+   - **Previous**: Go back to previous iterations.
+   - **Reset**: Reset the array to its initial unsorted state.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+4. **Toggle Auxiliary Visualizations (Merge Sort)**:
+   - Observe the **left** and **right auxiliary arrays** during each merge operation.
 
-### Deployment
+5. **Adjust Visualization Settings**:
+   - Use checkboxes to show or hide indexes and numbers on the bars.
+   - Adjust animation speed with the "Transition Time" dropdown menu.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+## Screenshots
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Here’s a snapshot of the **Merge Sort visualization**, highlighting its unique auxiliary array feature:
+
+![Sorting Visualizer Screenshot](./assets/screenshot.png)
+
+- **Main Array**: Displays the current progress of sorting.
+- **Left and Right Auxiliary Arrays**: Show intermediate steps of the merging process.
+- **Interactive Controls**: Provide complete control over the visualization, including animation speed adjustments.
+
+---
+
+## Why This Project Stands Out
+
+- **Unique Merge Sort Visualization**:
+  - Highlights the non-in-place nature of Merge Sort using auxiliary arrays, which is often overlooked in other visualizers.
+- **Highly Interactive**:
+  - Provides users with full control, allowing them to play, pause, reset, and step through sorting iterations at their own pace.
+- **Comprehensive Algorithm Coverage**:
+  - Covers key sorting algorithms like Bubble Sort, Selection Sort, Insertion Sort, Quick Sort, and Merge Sort, making it a valuable learning tool.
