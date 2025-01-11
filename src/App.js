@@ -79,7 +79,7 @@ function App() {
 
 	function createButtonHandler() {
 		const newSize = parseInt(sizeInput, 10);
-		if (newSize > 0 && newSize <= 400) {
+		if (newSize > 0 && newSize <= 100) {
 			setSize(newSize);
 			setArr(createArrayOf(newSize));
 			setIndex(0);
