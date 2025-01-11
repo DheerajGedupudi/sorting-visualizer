@@ -48,7 +48,7 @@ function App() {
 
 	const [isPlaying, setIsPlaying] = useState(false);
 
-	const [algorithm, setAlgorithm] = useState("Select Algorithm");
+	const [algorithm, setAlgorithm] = useState("Please Select Algorithm");
 
 	const [hideIndexes, setHideIndexes] = useState(true);
 
@@ -256,15 +256,13 @@ function App() {
 				<button onClick={nextButtonHandler}>Next</button>
 			</div>
 			<div>
-				<label>Transistion Time: </label>
+				<label>Transistion Speed: </label>
 				<select defaultValue={"0.1 Second"} onChange={(event) => setTransitionTime(event.target.value)}>
-					<option value={100}>Select Duration</option>
-					<option value={10}>0.01 Second</option>
-					<option value={50}>0.05 Second</option>
-					<option value={100}>0.1 Second</option>
-					<option value={200}>0.2 Second</option>
-					<option value={500}>0.5 Second</option>
-					<option value={1000}>1 Second</option>
+					<option value={500}>Default Speed</option>
+					<option value={50}>Faster</option>
+					<option value={200}>Fast</option>
+					<option value={500}>Normal</option>
+					<option value={1000}>Slow</option>
 				</select>
 			</div>
 			<div>
