@@ -8,6 +8,14 @@ button {
 	margin: 5px;
 }
 
+button:hover {
+	cursor: pointer;
+}
+
+select:hover {
+	cursor: pointer;
+}
+
 .algoName {
 	margin: 2px;
 	margin-bottom: -10px;

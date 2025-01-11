@@ -233,15 +233,16 @@ function App() {
 				<button onClick={createButtonHandler}>Create Array</button>
 			</div>
 			<div>
+				<label>Algorithm: </label>
 				<select value={algorithm} onChange={(event) => algoChangeHandler(event.target.value)}>
-					<option value={"Select Algorithm"}>Select Algorithm</option>
+					<option value={"Please Select Algorithm"}>Select Algorithm</option>
 					<option value={"Bubble Sort"}>Bubble Sort</option>
 					<option value={"Selection Sort"}>Selection Sort</option>
 					<option value={"Insertion Sort"}>Insertion Sort</option>
 					<option value={"Merge Sort"}>Merge Sort</option>
 					<option value={"Quick Sort"}>Quick Sort</option>
 				</select>
-				<button onClick={randomizeButtonHandler}>Randomize</button>
+				<button onClick={randomizeButtonHandler}>Shuffle</button>
 			</div>
 			<h2 className='algoName'>{algorithm}</h2>
 			<p>Array</p>
@@ -255,9 +256,6 @@ function App() {
 				<button onClick={nextButtonHandler}>Next</button>
 			</div>
 			<div>
-				<button onClick={resetButtonHandler}>Reset</button>
-				<button onClick={playButtonHandler}>Play</button>
-				<button onClick={stopButtonHandler}>Stop</button>
 				<label>Transistion Time: </label>
 				<select defaultValue={"0.1 Second"} onChange={(event) => setTransitionTime(event.target.value)}>
 					<option value={100}>Select Duration</option>
@@ -268,6 +266,11 @@ function App() {
 					<option value={500}>0.5 Second</option>
 					<option value={1000}>1 Second</option>
 				</select>
+			</div>
+			<div>
+				<button onClick={resetButtonHandler}>Reset</button>
+				<button onClick={playButtonHandler}>Play</button>
+				<button onClick={stopButtonHandler}>Stop</button>
 			</div>
 		</div>
 	);
