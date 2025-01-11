@@ -21,6 +21,11 @@ select:hover {
 	margin-bottom: -10px;
 }
 
+h1 {
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
 .checkBox {
 	border-style: solid;
 	border-color: black;

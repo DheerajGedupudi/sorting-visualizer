@@ -1,6 +1,6 @@
 .aux-column {
     min-width: 1px;
-    /* height: 29vh; */
+    height: 100%;
     width: 100%;
     padding: 1px;
     display: flex;

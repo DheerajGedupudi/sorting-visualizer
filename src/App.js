@@ -245,8 +245,8 @@ function App() {
 				<button onClick={randomizeButtonHandler}>Shuffle</button>
 			</div>
 
-			<label>Hide Numbers: </label>
-			<input type='checkbox' onChange={handleCheckBoxNumbers} className='checkBox'></input>
+			<label>Show Number Labels: </label>
+			<input type='checkbox' onChange={handleCheckBoxNumbers} className='checkBox' disabled={size > 50 ? true : false}></input>
 
 			<h2 className='algoName'>{algorithm}</h2>
 			<p>Array</p>
